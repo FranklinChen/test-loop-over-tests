@@ -16,5 +16,5 @@ scalaVersion := "2.11.5"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.0-SNAP4" % "test",
-  "org.specs2" %% "specs2" % "2.4.16" % "test"
+  "org.specs2" %% "specs2-core" % "2.4.16" % "test"
 )
