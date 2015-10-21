@@ -5,7 +5,7 @@ import org.specs2.specification.core.Fragments
 
 class ManyAcceptanceSpec extends Specification {
   def is = {
-    "A bunch of generated immutable specs2 tests should" ^ p ^
+    p ^ "A bunch of generated immutable specs2 tests should" ^ br ^
     Fragments.foreach(Seq(1, 3, 5)) { i =>
       testInt(i) ^ br
     }
