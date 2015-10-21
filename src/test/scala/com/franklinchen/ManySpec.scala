@@ -1,14 +1,15 @@
 package com.franklinchen
 
 import org.specs2.mutable._
+import org.specs2.specification.core.Fragments
 
 class ManySpec extends Specification {
-  "A bunch of generated specs2 tests" should {
-    Seq(1, 3, 5) foreach {
-      i =>
-      ("test each integer " + i + " for oddness") in {
-        i % 2 ==== 1
-      }
-    }
+  "A bunch of generated specs2 mutable tests" should {
+    Fragments.foreach(Seq(1, 3, 5))(testInt)
   }
+
+  def testInt(i: Int) =
+    s"test each integer $i for oddness" in {
+      i % 2 ==== 1
+    }
 }

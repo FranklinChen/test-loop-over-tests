@@ -1,15 +1,21 @@
-## Generating tests for Scala
+# Dynamically generating test cases in Scala test frameworks
 
 [![Build Status](https://travis-ci.org/FranklinChen/test-loop-over-tests.png)](https://travis-ci.org/FranklinChen/test-loop-over-tests)
 
-Often one has a set of data and wants to generate a single test for each item, so that if one fails, then that does not stop execution of the other tests.
+Often you want to parameterize a test by data, and run all of the tests independently so that any one failure does not step the test run. For example, maybe you have a sequence of integers and want to run a test case for each integer in the sequence.
+
+## A bad solution
+
+One attempted solution is to write *one* test case for the sequence, and inside the test case, sequentially loop over all the items in the sequence and make an assertion for each. The problems with this approach:
+
+- one assertion failure causes a break out of the loop and the whole test case fails
+- no parallel running of test cases
+
+## A good solution
+
+We *dynamically* generate a sequence of individual test cases.
+
+- since each data item results in its own test case, its failure does not stop the run of the other test cases
+- the test cases can be exercised in *parallel*, in a test framework that allows that
 
 This is easy to do with either [ScalaTest](http://www.scalatest.org/) or [specs2](http://specs2.org/).
-
-Here are some examples to illustrate.
-
-To run and see the succeeding and failing tests:
-
-```
-$ sbt test
-```
