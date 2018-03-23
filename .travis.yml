@@ -9,7 +9,7 @@ scala:
   - 2.12.5
   - 2.12.4
 jdk:
-  - openjdk9
+  - oraclejdk9
   - openjdk8
   - oraclejdk8
 script:
