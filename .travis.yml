@@ -1,16 +1,25 @@
 sudo: false
 dist: trusty
+os:
+  - linux
 language: scala
 cache:
   directories:
     - $HOME/.ivy2/cache
     - $HOME/.sbt/boot/
+before_cache:
+  # Tricks to avoid unnecessary cache updates
+  - find $HOME/.ivy2 -name "ivydata-*.properties" -delete
+  - find $HOME/.sbt -name "*.lock" -delete
 scala:
-  - 2.12.4
+  - 2.12.6
 jdk:
+  - oraclejdk10
+  - openjdk10
   - oraclejdk9
-  - openjdk8
+  - openjdk9
   - oraclejdk8
+  - openjdk8
 script:
   - sbt ++$TRAVIS_SCALA_VERSION test
   - find $HOME/.sbt -name "*.lock" | xargs rm
