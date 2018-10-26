@@ -1,6 +1,6 @@
 # Dynamically generating test cases in Scala test frameworks
 
-[![Build Status](https://travis-ci.org/FranklinChen/test-loop-over-tests.png)](https://travis-ci.org/FranklinChen/test-loop-over-tests)
+[![Build Status](https://travis-ci.org/FranklinChen/test-loop-over-tests.svg)](https://travis-ci.org/FranklinChen/test-loop-over-tests)
 
 Often you want to parameterize a test by data, and run all of the tests independently so that any one failure does not step the test run. For example, maybe you have a sequence of integers and want to run a test case for each integer in the sequence.
 
