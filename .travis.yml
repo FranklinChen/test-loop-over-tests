@@ -12,13 +12,17 @@ matrix:
     - os: linux
       jdk: openjdk-ea
     - os: linux
+      jdk: openjdk13
+    - os: linux
       jdk: openjdk11
     - os: osx
       jdk: openjdk11
+    - os: osx
+      jdk: openjdk13
   allow_failures:
     - jdk: openjdk-ea
 scala:
-  - 2.13.0
+  - 2.13.1
 script:
   - sbt ++$TRAVIS_SCALA_VERSION clean test
   - find $HOME/.sbt -name "*.lock" | xargs rm
