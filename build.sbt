@@ -12,9 +12,11 @@ description := "Demonstrate generating tests in Scala"
 
 version := "1.0.0"
 
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.2"
+
+scalacOptions += "-deprecation"
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.1.1" % Test,
-  "org.specs2" %% "specs2-core" % "4.8.3" % Test
+  "org.scalatest" %% "scalatest" % "3.1.2" % Test,
+  "org.specs2" %% "specs2-core" % "4.9.4" % Test
 )
