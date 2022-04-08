@@ -1,6 +1,6 @@
 # Dynamically generating test cases in Scala test frameworks
 
-[![Build Status](https://travis-ci.org/FranklinChen/test-loop-over-tests.svg)](https://travis-ci.org/FranklinChen/test-loop-over-tests)
+![Continuous Integration](https://github.com/FranklinChen/test-loop-over-tests/workflows/Continuous%20Integration/badge.svg)
 
 Often you want to parameterize a test by data, and run all of the tests independently so that any one failure does not step the test run. For example, maybe you have a sequence of integers and want to run a test case for each integer in the sequence.
 
@@ -18,4 +18,4 @@ We *dynamically* generate a sequence of individual test cases.
 - since each data item results in its own test case, its failure does not stop the run of the other test cases
 - the test cases can be exercised in *parallel*, in a test framework that allows that
 
-This is easy to do with either [ScalaTest](http://www.scalatest.org/) or [specs2](http://specs2.org/).
+This is easy to do with either [ScalaTest](https://www.scalatest.org/) or [specs2](https://etorreborre.github.io/specs2/).

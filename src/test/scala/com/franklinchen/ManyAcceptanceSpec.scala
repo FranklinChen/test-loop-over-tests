@@ -5,6 +5,8 @@ import org.specs2.specification.core.Fragments
 
 class ManyAcceptanceSpec extends Specification {
   def is = {
+    import scala.language.implicitConversions
+
     p ^ "A bunch of generated immutable specs2 tests should" ^ br ^
       Fragments.foreach(Seq(1, 3, 5)) { i =>
         testInt(i) ^ br
@@ -13,6 +15,6 @@ class ManyAcceptanceSpec extends Specification {
 
   def testInt(i: Int) =
     s"test each integer $i for oddness" ! {
-      i % 2 ==== 1
+      i % 2 === 1
     }
 }

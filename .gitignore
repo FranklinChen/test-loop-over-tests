@@ -1,3 +1,7 @@
-target
-.ensime*
+target/
+.idea*
+*.iml
+.metals/
 .bloop/
+project/metals.sbt
+.bsp/
