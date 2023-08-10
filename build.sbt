@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "3.1.1"
+ThisBuild / scalaVersion := "3.3.0"
 ThisBuild / githubWorkflowPublishTargetBranches := Seq()
 
 lazy val root = (project in file("."))
@@ -10,13 +10,13 @@ lazy val root = (project in file("."))
     startYear := Some(2013),
     description := "Demonstrate generating tests in Scala",
     version := "1.0.0",
-    crossScalaVersions := List("2.12.15", "2.13.8", "3.1.1"),
+    crossScalaVersions := List("3.3.0"),
     scalacOptions ++= Seq(
       "-deprecation",
       "-feature"
     ),
     libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.2.11" % Test,
-      "org.specs2" %% "specs2-core" % "5.0.0" % Test
+      "org.scalatest" %% "scalatest" % "3.2.16" % Test,
+      "org.specs2" %% "specs2-core" % "5.3.2" % Test
     )
   )
